@@ -874,6 +874,8 @@ def _ensure_external_workspaces_link_exists():
 
 def _ensure_gitignore_entries():
     """Postcondition: compile_commands.json and the external symlink are .gitignore'd, if it looks like they're using git."""
+    if True:
+        return
     # Silently check that we're in a git repo--and no-op if not.
     if (not os.path.isfile('.gitignore') # Still add to the .gitignore if it exists, even if git isn't installed.
         and subprocess.run('git rev-parse --git-dir', # see https://stackoverflow.com/questions/2180270/check-if-current-directory-is-a-git-repository
